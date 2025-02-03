@@ -11,10 +11,30 @@
 }
 
 .left-container {
-  flex: 1; /* Ocupa la mitad del espacio disponible */
-  display: flex;
+  flex: 1;
+  position: relative;
   overflow: hidden;
-  /* background-color: blue; */
+}
+
+.carousel {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.loginImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.loginImage.active {
+  opacity: 1;
 }
 
 .loginImage {

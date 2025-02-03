@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Register.css";
 import { useNavigate } from "react-router-dom";
 import loginImg from "../../../assets/login.png";
@@ -41,6 +41,19 @@ const Register = () => {
       setError(error.message);
     }
   };
+
+  // Carrusel
+
+  const [currentImage, setCurrentImage] = useState(0);
+  const images = [loginImg, welcomeImg];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prevImage) => (prevImage + 1) % images.length);
+    }, 10000); // Cambia la imagen cada 10 segundos
+
+    return () => clearInterval(interval);
+  }, [images.length]);
 
   return (
     <div className="main-login">
@@ -105,11 +118,18 @@ const Register = () => {
           </div>
         </div>
         <div className="left-container">
-          <img
-            src={loginImg}
-            alt="Descripción de la imagen"
-            className="loginImage"
-          />
+          <div className="carousel">
+            {images.map((img, index) => (
+              <img
+                key={index}
+                src={img || "/placeholder.svg"}
+                alt={`Login image ${index + 1}`}
+                className={`loginImage ${
+                  index === currentImage ? "active" : ""
+                }`}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>
