@@ -1,0 +1,33 @@
+.header {
+  /* background-color: #ffffff; */
+  padding: 0.5rem 0.2rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: end;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-name {
+  font-weight: 600;
+  color: #333;
+}
+
+.logout-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #666;
+  display: flex;
+  align-items: end;
+  transition: color 0.2s;
+}
+
+/* .logout-button:hover {
+  color: #2196f3;
+} */
