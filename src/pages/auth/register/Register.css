@@ -14,7 +14,7 @@
   flex: 1; /* Ocupa la mitad del espacio disponible */
   display: flex;
   overflow: hidden;
-  background-color: blue;
+  /* background-color: blue; */
 }
 
 .loginImage {
